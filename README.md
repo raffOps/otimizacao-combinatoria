@@ -1,3 +1,4 @@
 # otimizacao-combinatoria
 
-```pip install -r requirements.txt```
+1. ```make julia```
+2. ```make jupyter```
