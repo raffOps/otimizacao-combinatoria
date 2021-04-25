@@ -55,7 +55,7 @@ function otimiza(arquivo)
     @variable(m, V[1:k], Bin);
     @variable(m, u[1:k]);
 
-    @objective(m, Min, sum(D[1:k] .* A[1:k]) - sum(P[1:k] .* V[1:k]));
+    @objective(m, Min, sum(D .* A) - sum(P .* V));
 
     @constraints(m, begin
         #3
@@ -94,7 +94,7 @@ end
 #     println(file)
 # end
 
-file = "A-n32-k5.vrp"
+file = ARGS[1]
 
 m, A = otimiza(file);
 
