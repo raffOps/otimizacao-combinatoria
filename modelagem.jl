@@ -51,6 +51,7 @@ function otimiza(arquivo)
     k = length(P);
     #k=6;
     m = Model(GLPK.Optimizer)
+    set_time_limit_sec(m, 1800)
     @variable(m, A[1:k, 1:k], Bin)
     @variable(m, V[1:k], Bin);
     @variable(m, u[1:k]);
