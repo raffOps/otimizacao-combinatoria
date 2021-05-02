@@ -133,3 +133,4 @@ envio/
 .vscode/
 
 *.code-workspace
+.ipynb_check*
