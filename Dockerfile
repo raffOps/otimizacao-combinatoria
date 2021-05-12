@@ -57,7 +57,7 @@ USER $NB_UID
 # to the system share location. Avoids problems with runtime UID change not
 # taking effect properly on the .local folder in the jovyan home dir.
 RUN julia -e 'import Pkg; Pkg.update()' && \
-    julia -e "using Pkg; pkg\"add JuMP\";pkg\"add GLPK\";pkg\"add IJulia\"; pkg\"add Formatting\"; pkg\"add StatsBase\"; pkg\"precompile\"" && \
+    julia -e "using Pkg; pkg\"add JuMP\";pkg\"add GLPK\";pkg\"add IJulia\"; pkg\"add Formatting\"; pkg\"add StatsBase\";pkg\"add CSV\";pkg\"add DataFrames\"; pkg\"precompile\"" && \
     # move kernelspec out of home \
     mv "${HOME}/.local/share/jupyter/kernels/julia"* "${CONDA_DIR}/share/jupyter/kernels/" && \
     chmod -R go+rx "${CONDA_DIR}/share/jupyter" && \
